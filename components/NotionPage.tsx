@@ -16,14 +16,16 @@ import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from 'react-tweet'
 import { useSearchParam } from 'react-use'
 
 import type * as types from '@/lib/types'
+import { AD } from "@/components/AD";
 import * as config from '@/lib/config'
 import { mapImageUrl } from '@/lib/map-image-url'
 import { getCanonicalPageUrl, mapPageUrl } from '@/lib/map-page-url'
 import { searchNotion } from '@/lib/search-notion'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
+import { Comment } from "./Comment";
 import { Footer } from './Footer'
-import { GitHubShareButton } from './GitHubShareButton'
+// import { GitHubShareButton } from './GitHubShareButton'
 import { Loading } from './Loading'
 import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
@@ -211,6 +213,7 @@ export function NotionPage({
   )
 
   const footer = React.useMemo(() => <Footer />, [])
+  const comment = React.useMemo(() => <Comment/>, [])
 
   if (router.isFallback) {
     return <Loading />
@@ -289,9 +292,10 @@ export function NotionPage({
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
         footer={footer}
+        pageFooter={comment}
       />
-
-      <GitHubShareButton />
+      <AD/>
+      {/*<GitHubShareButton />*/}
     </>
   )
 }
