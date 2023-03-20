@@ -20,12 +20,13 @@ import { searchNotion } from '@/lib/search-notion'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
 import { Footer } from './Footer'
-import { GitHubShareButton } from './GitHubShareButton'
+// import { GitHubShareButton } from './GitHubShareButton'
 import { Loading } from './Loading'
 import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
+import { Comment } from "./Comment";
 import styles from './styles.module.css'
 
 // -----------------------------------------------------------------------------
@@ -201,6 +202,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   )
 
   const footer = React.useMemo(() => <Footer />, [])
+  const comment = React.useMemo(() => <Comment/>, [])
 
   if (router.isFallback) {
     return <Loading />
@@ -279,9 +281,10 @@ export const NotionPage: React.FC<types.PageProps> = ({
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
         footer={footer}
+        pageFooter={comment}
       />
 
-      <GitHubShareButton />
+      {/*<GitHubShareButton />*/}
     </>
   )
 }
