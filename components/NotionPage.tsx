@@ -28,6 +28,7 @@ import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
 import { Comment } from "./Comment";
 import styles from './styles.module.css'
+import { AD } from "@/components/AD";
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -283,7 +284,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         footer={footer}
         pageFooter={comment}
       />
-
+      <AD/>
       {/*<GitHubShareButton />*/}
     </>
   )
