@@ -22,11 +22,7 @@ import 'styles/prism-theme.css'
 
 import { bootstrap } from '@/lib/bootstrap-client'
 import {
-  fathomConfig,
-  fathomId,
   isServer,
-  posthogConfig,
-  posthogId
 } from '@/lib/config'
 
 if (!isServer) {
@@ -34,33 +30,6 @@ if (!isServer) {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter()
-
-  React.useEffect(() => {
-    function onRouteChangeComplete() {
-      if (fathomId) {
-        Fathom.trackPageview()
-      }
-
-      if (posthogId) {
-        posthog.capture('$pageview')
-      }
-    }
-
-    if (fathomId) {
-      Fathom.load(fathomId, fathomConfig)
-    }
-
-    if (posthogId) {
-      posthog.init(posthogId, posthogConfig)
-    }
-
-    router.events.on('routeChangeComplete', onRouteChangeComplete)
-
-    return () => {
-      router.events.off('routeChangeComplete', onRouteChangeComplete)
-    }
-  }, [router.events])
 
   return <>
     <Component {...pageProps} />

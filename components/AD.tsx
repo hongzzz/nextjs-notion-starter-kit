@@ -2,10 +2,27 @@ import * as React from 'react'
 import Script from 'next/script'
 export const AD: React.FC = () => {
   return (
-    <Script
-      async
-      src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3799724663967277'
-      crossOrigin='anonymous'
-    ></Script>
+    <>
+      {/*google adsense*/}
+      <Script
+        async
+        src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3799724663967277'
+        crossOrigin='anonymous'
+      />
+      {/* google analysis*/}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-H6MGLKHD2G"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-H6MGLKHD2G');
+        `}
+      </Script>
+    </>
   )
 }
