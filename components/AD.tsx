@@ -11,7 +11,7 @@ export const AD: React.FC = () => {
       />
       {/* google analysis*/}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-H6MGLKHD2G"
+        src="https://www.googletagmanager.com/gtag/js?id=G-B6YCV10DD7"
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -20,7 +20,7 @@ export const AD: React.FC = () => {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-H6MGLKHD2G');
+          gtag('config', 'G-B6YCV10DD7');
         `}
       </Script>
     </>
