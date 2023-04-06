@@ -8,6 +8,7 @@ export const AD: React.FC = () => {
         async
         src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3799724663967277'
         crossOrigin='anonymous'
+        strategy="afterInteractive"
       />
       {/* google analysis*/}
       <Script
