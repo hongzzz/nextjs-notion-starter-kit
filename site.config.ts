@@ -19,7 +19,7 @@ export default siteConfig({
   // social usernames (optional)
   twitter: '',
   github: 'hongzzz',
-  linkedin: '',
+  linkedin: 'harriswuwu',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
@@ -56,9 +56,9 @@ export default siteConfig({
       title: 'About',
       pageId: '1a35250d2d034cf1938c034a5de25979'
     },
-    {
-      title: 'Contact',
-      pageId: '3341fd748768489999f8b750693a1f16'
-    }
+    // {
+    //   title: 'Contact',
+    //   pageId: '3341fd748768489999f8b750693a1f16'
+    // }
   ]
 })
